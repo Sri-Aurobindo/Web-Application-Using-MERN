@@ -1,0 +1,123 @@
+h1 {
+    font-family: 'Lobster', cursive;
+    text-align: center;
+  }
+
+body {
+    background-color:sienna;
+    padding:25px;
+    margin: 15px;
+    
+    
+}
+
+nav{
+    background-color:paleturquoise;
+    padding:10px;
+    margin: 15px;
+    border: 10px;
+    border-color: beige;
+    border-style: solid;
+    position:sticky;
+    top: 0;
+}
+
+main{
+    background-color: beige;
+    padding:30px;
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+footer{
+    font-size:large;
+    text-align: center;
+}
+
+li{
+    list-style-type: none;
+    width: fit-content;
+    
+}
+nav ul{
+    display: flex;
+    justify-content: space-around;
+}
+
+a:link {
+    text-decoration: none;
+}
+a:visited {
+    color:black;
+}
+a:hover {
+    background-color: yellow;
+}
+.active {
+    background-color: beige;       
+}
+
+table {
+    width: 100%;
+    border: 3px solid sienna;
+    /* border-collapse: collapse; */
+  }
+
+  th,td {
+    padding: 20px;
+    text-align: center;
+    border: 3px solid sienna;
+    border-collapse: collapse;
+  }
+
+  th{
+    background-color: paleturquoise;
+  }
+
+  
+
+  #formid {
+    display: grid;
+    grid-template-columns: 10rem 20rem;
+    grid-row-gap: 0.5em;
+    grid-column-gap: 0.5em;
+    border:solid black;
+    border-radius: 1rem;
+    padding: 1.0rem;
+    align-self: center;
+    
+}
+
+input:required:valid{
+    background-color: #49e756;
+    }
+
+    input:required:invalid {
+    background-color: #dd4c4c;
+    }
+
+    .hide{
+        display: none ;
+        
+        }
+        .show{
+        display: block !important;
+        background-color:rgb(145, 130, 216);
+        }
+    
+        #ThanksDialog{
+            background-color: rgb(243, 229, 149);
+            position: fixed;
+            border: 10px;
+            border-color: black;
+            border-style:double;
+            margin: 20px;
+            text-align: center;
+            left: 40%;
+            transform: translate(-25%,-30%);
+        }
+        

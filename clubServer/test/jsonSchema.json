@@ -1,0 +1,34 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "http://locolhost:9060/activities",
+    "title": "Activity Schema",
+    "description": "A Schema that requires a JSON object",
+    "type": "object",
+    "properties":
+        {
+            "Name": {
+            "description": "the Name of the activity",
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 40
+            },
+            "Date": {
+            "description": "the date of the activity",
+            "type": "string"
+            },
+            "Time":{
+            "description": "the Time of the activity",
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 15
+            },
+            "Description":{
+            "description": "the summary of the activity",
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 100
+            }
+        },
+        "required": ["Name", "Date"],
+        "additionalProperties": true
+  }

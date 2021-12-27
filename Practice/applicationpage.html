@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Application Page</title>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" href="club.css">
+    <style>
+        input:required:valid{
+        background-color: #49e756;
+        }
+
+        input:required:invalid {
+        background-color: #dd4c4c;
+        }
+        .hide{
+        display: none ;
+        
+        }
+        .show{
+        display: block !important;
+        background-color:rgb(145, 130, 216);
+        }
+    
+        #ThanksDialog{
+            background-color: rgb(243, 229, 149);
+            position: fixed;
+            border: 10px;
+            border-color: black;
+            border-style:double;
+            margin: 20px;
+            text-align: center;
+            left: 40%;
+            transform: translate(-25%,-30%);
+        }
+        
+    </style>
+</head>
+<body id="body" class="">
+    <nav id=navid>
+        <ul>
+            <li><a href="./index.html">Home</a></li>
+            <li ><a href="./clubactivities.html">Club Activities Page</a></li>
+            <li ><a href="./login.html">Login</a></li>
+            <li class="active"><a href="./applicationpage.html">Membership</a></li>
+        </ul>
+    </nav>
+    <header>
+        <h1 id="hid">Membership</h1>
+    </header>
+    <main>
+        <form id="formid">
+            <label>Name :</label>
+            <input type="text" id="Name" required minlength="5">
+            <label>Email :</label>
+            <input type="email" id="Email" required>
+            <label>Password :</label>
+            <input type="password" id="Password" minlength="8" required>
+            <label for="Level">Level :</label>
+            <select name="Level" id="Level" required>
+                <option value="Beginner">Beginner</option>
+                <option value="Intermediate">Intermediate</option>
+                <option value="Advanced">Advanced</option>
+                <option value="Expert">Expert</option>
+            </select>
+            <label>Comments :</label>
+            <textarea id="Comments" placeholder="enter your stuff here"></textarea>
+            <button type="button" id="signupid">Sign up</button>
+        </form>
+        <section id="ThanksDialog" class="hide">
+        </section>
+    </main>
+    <footer id="footerid">
+        &copy;2021 - GothamSoccerClub
+    </footer>
+    <script>
+        let signupvar = document.querySelector("#signupid")
+        signupvar.addEventListener('click', signup);
+        let mainvar = document.getElementById("mainid");
+        let formvar = document.getElementById("formid");
+        let navvar = document.getElementById("navid");
+        function signup()
+        {
+            let sec = document.getElementById("ThanksDialog")
+            let name = document.getElementById("Name")
+            let email = document.getElementById("Email")
+            let level = document.getElementById("Level")
+            let body = document.getElementById("body")
+            
+
+            let p = document.createElement('p');
+                p.innerHTML = '<h3><b>Thanks for Sigining Up</b></h3>' + 'Your Name' + ':' +
+                name.value + ',' + 'Email' + ':'
+                + email.value + ',' + 'Level'+
+                ':' + level.value + '.' +'<button type="button" id=closeid>Close</button>';
+            
+
+            sec.appendChild(p);
+            sec.classList.add("show");
+            body.classList.add("show");
+            
+            
+            formvar.setAttribute("style","opacity:0.3");
+            navvar.setAttribute("style","opacity:0.3");
+            document.getElementById('footerid').setAttribute("style","opacity:0.3");
+            document.getElementById('hid').setAttribute("style","opacity:0.3");
+            let closevar = document.querySelector("#closeid");
+            closevar.addEventListener('click', clear);
+        }
+
+        
+        function clear()
+        {
+            let sec = document.getElementById("ThanksDialog");
+            sec.classList.remove("show");
+            let body = document.getElementById("body");
+            body.classList.remove("show");
+            sec.innerHTML = "";
+            formvar.removeAttribute("style","{opacity:0.5}");
+            navvar.removeAttribute("style","{opacity:0.5}");
+            document.getElementById('footerid').removeAttribute("style","opacity:0.3");
+            document.getElementById('hid').removeAttribute("style","opacity:0.3");
+             
+        }
+    </script>
+</body>
+
+</html>

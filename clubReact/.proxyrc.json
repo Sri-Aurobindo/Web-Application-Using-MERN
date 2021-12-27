@@ -1,0 +1,11 @@
+{
+    "/members": {
+      "target": "http://localhost:9060"
+    },
+    "/activities": {
+        "target": "http://localhost:9060"
+    },
+    "/login": {
+        "target": "http://localhost:9060"
+    }
+}

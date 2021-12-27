@@ -1,0 +1,15 @@
+[{"firstName":"sandeep",
+    "lastName" :"nangineni",
+    "gender":"M",
+    "address":"25200 Carlos Bee Blvd, CA 94542",
+    "mobile":9078967563,
+    "email":"sai@email.com"
+},
+{"firstName":"asif",
+    "lastName" :"patan",
+    "gender":"F",
+    "address":"25200 Carlos Bee Blvd, CA 94542",
+    "mobile":9078945563,
+    "email":"asif@email.com"
+}
+]

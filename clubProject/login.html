@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Login Page</title>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" href="club.css">
+   
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="./index.html">Home</a></li>
+            <li ><a href="./clubactivities.html">Club Activities Page</a></li>
+            <li class="active"><a href="./login.html">Login</a></li>
+            <li><a href="./applicationpage.html">Membership</a></li>
+        </ul>
+    </nav>
+    <header>
+        <h1>Login</h1>
+    </header>
+    <main>
+        <form>
+            <label>Email :</label>
+            <input type="email" id="Email" required>
+            <label>Password :</label>
+            <input type="password" id="Password" minlength=8 required>
+            <button type="submit">Login</button>
+        </form>
+        <section style="border: 10px;border-color: sienna;border-style:double;margin: 20px;height: auto;width: auto;">
+            <h3 style="text-align: center;">Doodle Section</h3>
+            <button type="button" style="margin: 15px;" id="add" >add</button>
+            <button type="button" id="clear" >clear</button>
+            <div><svg id="svg"  xmlns="http://www.w3.org/2000/svg"  style="border: 10px;border-color:black;border-style:dashed;margin: 10px;height: 500px;width: 600px;background-color:aliceblue">        
+            </svg></div>
+        </section>
+    </main>
+    <footer>
+        &copy;2021 - GothamSoccerClub
+    </footer>
+    <script>
+        let addid = document.getElementById("add")
+        addid.addEventListener('click', addfunc);
+        function addfunc(){
+            let svgvar = document.getElementById("svg");
+            let maxSize = 50,
+            maxX = 500,
+            maxY = 600;
+            let x = Math.random()*(maxX);
+            let y = Math.random()*(maxY);
+            let width = Math.random()*maxSize;
+            let ry = Math.random()*maxSize;
+            let ellipse = document.createElementNS("http://www.w3.org/2000/svg", "ellipse");
+            ellipse.setAttribute("cx", x);
+            ellipse.setAttribute("cy", y);
+            ellipse.setAttribute("rx", width);
+            ellipse.setAttribute("ry", ry);
+            let randcolor = `rgb(${255*Math.random()}, ${255*Math.random()}, ${255*Math.random()})`;
+            ellipse.setAttribute("fill", randcolor);
+            ellipse.setAttribute("fill-opacity", 0.6);
+            svgvar.appendChild(ellipse)   
+        }
+        let clearid = document.getElementById("clear")
+        clearid.addEventListener('click', clearfunc);
+        function clearfunc()
+        {
+            let svg = document.getElementById('svg');
+            svg.innerHTML = "";
+        }
+    </script>
+</body>
+
+</html>

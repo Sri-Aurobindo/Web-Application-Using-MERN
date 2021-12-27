@@ -1,0 +1,45 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "http://locolhost:9060/applicants",
+    "title": "Applicant Schema",
+    "description": "A Schema that requires a JSON object",
+    "type": "object",
+        "properties":
+        {
+            "firstName": {
+            "description": "the firstName of the applicant",
+            "type": "string",
+            "minLength": 1,
+            "maxLength":20
+            },
+            "lastName": {
+            "description": "the lastname of the applicant",
+            "type": "string"
+            },
+            "gender":{
+            "description": "gender of the applicant",
+            "type": "string",
+            "maxLength": 1
+            },
+            "address":{
+            "description": "the address of the applicant",
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 100
+            },
+            "mobile":{
+                "description": "the mobile number of the applicant",
+                "type": "number"
+            },
+            "email":{
+                    "description": "the email of the applicant",
+                    "type": "string",
+                    "minLength": 8,
+                    "maxLength": 20
+                    }
+        },
+        "required": ["firstName", "email","address","mobile"],
+        "additionalProperties": false
+    
+    
+  }
